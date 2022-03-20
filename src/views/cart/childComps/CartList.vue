@@ -4,7 +4,9 @@
       <cart-list-item  
       v-for="item in getcartList" 
       :key="item.id" 
-      :product = "item"></cart-list-item>
+      :product = "item"
+      >
+      </cart-list-item>
     </scroll>
   </div>
 </template>
