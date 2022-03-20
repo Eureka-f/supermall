@@ -1,0 +1,50 @@
+<template>
+  <div class="profile">
+    <nav-bar class="profile-navbar"><template #center>商城</template></nav-bar>
+    <user-info></user-info>
+    <account-info></account-info>
+    <normal-list-view :list-data="ListData"></normal-list-view>
+    <normal-list-view :list-data="serviceList"></normal-list-view>
+  </div>
+</template>
+
+<script>
+  import NavBar from 'components/common/navbar/NavBar'
+  import userInfo from './childComps/userInfo.vue'
+  import AccountInfo from './childComps/AccountInfo.vue'
+  import NormalListView from './childComps/NormalListView.vue'
+  export default {
+    props: {
+      
+    },
+    data() {
+      return {
+        ListData: [
+          {icon:'message.svg', info:'我的消息'},
+          {icon:'pointer.svg', info:'积分商城'},
+          {icon:'vip.svg', info:'我的消息'}
+        ],
+        serviceList: [
+          {icon:'cart.svg',info:'我的购物车'},
+          {icon:'shopping.svg',info:'下载购物APP'},
+        ]
+      }
+    },
+    components: {
+      NavBar,
+      userInfo,
+      AccountInfo,
+      NormalListView
+    }
+  }
+
+
+</script>
+
+<style>
+.profile-navbar {
+  background-color: var(--color-tint);
+  color: #fff;
+  font-weight: 700;
+}
+</style>
